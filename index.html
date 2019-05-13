@@ -44,7 +44,9 @@
         <link href="http://fonts.googleapis.com/css?family=Raleway:500,800" rel="stylesheet" property="stylesheet" type="text/css" media="all" />
         <script src="js/echarts.min.js"></script>
         <script src="js/echarts.js"></script>
-        
+       
+     
+     </script>
         <style>
         body,div{ font-size:16px;}
         p{ text-indent:2em; padding:0px; margin:0px; }
@@ -54,7 +56,7 @@
         .div-b{ float:right;width:52%;} 
         
         </style> 
-      
+        
 
 
     </head>
@@ -86,13 +88,11 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6 welcome-img">
-                            <p></p><br>
-                            <p></p><br>
+                       
                             <img class="img-responsive" src="img/imac1.jpg" alt="">
                         </div>
 
                         <div class="col-md-6">
-                            <div class="mb30"></div>
                             <h2 class="mb15"><strong>交通--城市的血脉</strong></h2><br>
                             <p>在北京，每天中心城区有3893万人次的出行次数，其中乘坐汽车公交等机动车出行次数达到1162万人次/日。此外，每天有超过1000万人穿行在北京的大街小巷中，出入在一个个地铁口当中。</p><br>
                             <p>这些庞大的交通流激发着整个都市的活力，如同整个城市的血脉，而当城市血脉运行不畅时，则也影响着每一个生活在这座城市里的居民。</p><br>
@@ -112,13 +112,299 @@
                         <p align="left">2014年1月至2018年12月期间，依据高德地图每年发布的四个全国交通报告（3个季度报告、1个年度报告），总计发布了20个拥堵排行榜，该榜单中主要记录了高峰期间我国个城市的拥堵状况。在每个榜单当中的前十名中，首都北京无一次缺席，其中9次高居榜首，可谓是中国最拥堵的城市，这也就不难怪会有网民调侃道：“首都首都，天天都堵，一天不堵，不叫首堵”。</p><br>
                         <p align="left">北京的拥堵水平首屈一指，而过去五年间能跟北京比堵的只有济南。近年来，济南的交通拥堵水平与北京几乎不相上下，从2014年有榜单记录以来，济南长期处于我国最为拥堵的十个城市之一，曾连续17次入榜，其中6次位于榜首，不过在近3次榜单中2次落选了前十位，拥堵状况存在逐渐缓解的趋势。</p><br>
                         <p align="left">除了北京济南两大堵城常年轮转“首堵”之外，我国一些大城市也是拥堵榜单中的常客，哈尔滨、广州、重庆、上海等城市多次入围榜单前十位，常年处于拥堵状况。</p><br>
-                    
-                    <center>
-                         <div class='tableauPlaceholder' id='viz1557320511040' style='position: relative'><noscript><a href=''><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;FB&#47;FB6ZPMF8T&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='path' value='shared&#47;FB6ZPMF8T' /> <param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;FB&#47;FB6ZPMF8T&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1557320511040');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
-                        vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
-                                                <p style="text-indent:0em">数据来源： <a href="https://report.amap.com/download_city.do">2014-2018《中国主要城市交通分析报告》</a> </p>
+                        <p style="text-indent:0em;font-size: 20px;color:black">2014-2018年我国各城市登上拥堵榜单前十位频次</p> 
+                        <div>
+                           <center> <div id="echart1" style="width: 1024px;height:700px; "></div></center>
+                        
+                        <script type="text/javascript">
+                                // 基于准备好的dom，初始化echarts实例
+                                var myChart = echarts.init(document.getElementById('echart1'));
+                        
+                                // 指定图表的配置项和数据
+                        
 
-                    </center>
+                                var plantCap = [{
+    name: '北京',
+    value: '20'
+}, {
+    name: '济南',
+    value: '18'
+}, {
+    name: '哈尔滨',
+    value: '17'
+}, {
+    name: '广州',
+    value: '16'
+}, {
+    name: '重庆',
+    value: '16'
+}, {
+    name: '上海',
+    value: '15'
+}, {
+    name: '杭州',
+    value: '11'
+}, {
+    name: '深圳',
+    value: '10'
+}, {
+    name: '大连',
+    value: '9'
+}, {
+    name: '长春',
+    value: '6'
+}, {
+    name: '贵阳',
+    value: '6'
+}, {
+    name: '呼和浩特',
+    value: '5'
+}, {
+    name: '昆明',
+    value: '5'
+}, {
+    name: '福州',
+    value: '4'
+}, {
+    name: '郑州',
+    value: '4'
+}, {
+    name: '合肥',
+    value: '4'
+}, {
+    name: '成都',
+    value: '3'
+}, {
+    name: '佛山',
+    value: '3'
+}, {
+    name: '青岛',
+    value: '3'
+}, {
+    name: '沈阳',
+    value: '3'
+}, {
+    name: '西安',
+    value: '3'
+}, {
+    name: '南宁',
+    value: '2'
+}, {
+    name: '石家庄',
+    value: '2'
+}, {
+    name: '武汉',
+    value: '2'
+}, {
+    name: '银川',
+    value: '2'
+}];
+
+var datalist = [{
+    offset: [56, 58],
+    symbolSize: 200,
+    opacity: .95,
+    color: '#FF6666'
+}, {
+    offset: [58, 78],
+    symbolSize: 180,
+    opacity: .88,
+    color: '#FF9999'
+}, {
+    offset: [35, 60],
+    symbolSize: 170,
+    opacity: .84,
+    color: '#FF9966'
+}, {
+    offset: [75, 65],
+    symbolSize: 160,
+    opacity: .8,
+    color: '#FFCC99'
+}, {
+    offset: [39, 42],
+    symbolSize: 160,
+    opacity: .80,
+    color: '#FF99CC'
+}, {
+    offset: [76, 43],
+    symbolSize: 150,
+    opacity: .80,
+    color: '#CCCCFF'
+}, {
+    offset: [80, 80],
+    symbolSize: 110,
+    opacity: .80,
+    color: '#66CCCC'
+}, {
+    offset: [92, 72],
+    symbolSize: 100,
+    opacity: .80,
+    color: '#006699'
+}, {
+    offset: [88, 52],
+    symbolSize: 90,
+    opacity: .80,
+    color: '#99CCCC'
+}, {
+    offset: [47, 69],
+    symbolSize: 60,
+    opacity: .80,
+    color: '#99CCCC'
+}, {
+    offset: [55, 44],
+    symbolSize: 60,
+    opacity: .80,
+    color: '#99CCCC'
+}, {
+    offset: [35, 75],
+    symbolSize: 50,
+    opacity: .80,
+    color: '#99CCCC'
+}, {
+    offset: [88, 60],
+    symbolSize: 50,
+    opacity: .80,
+    color: '#99CCCC'
+}, {
+    offset: [80, 53],
+    symbolSize: 40,
+    opacity: .80,
+    color: '#99CCCC'
+}, {
+    offset: [53, 35],
+    symbolSize: 40,
+    opacity: .80,
+    color: '#99CCCC'
+}, {
+    offset: [50, 40],
+    symbolSize: 40,
+    opacity: .80,
+    color: '#99CCCC'
+}, {
+    offset: [66, 48],
+    symbolSize: 30,
+    opacity: .80,
+    color: '#99CCCC'
+}, {
+    offset: [60, 41],
+    symbolSize: 30,
+    opacity: .80,
+    color: '#99CCCC'
+}, {
+    offset: [27, 40],
+    symbolSize: 30,
+    opacity: .80,
+    color: '#99CCCC'
+}, {
+    offset: [39, 82],
+    symbolSize: 30,
+    opacity: .80,
+    color: '#99CCCC'
+}, {
+    offset: [42, 68],
+    symbolSize: 30,
+    opacity: .80,
+    color: '#99CCCC'
+}, {
+    offset: [42, 74],
+    symbolSize: 25,
+    opacity: .80,
+    color: '#99CCCC'
+}, {
+    offset: [74, 53],
+    symbolSize: 25,
+    opacity: .80,
+    color: '#99CCCC'
+}, {
+    offset: [26, 50],
+    symbolSize: 25,
+    opacity: .80,
+    color: '#99CCCC'
+}, {
+    offset: [90, 40],
+    symbolSize: 25,
+    opacity: .80,
+    color: '#99CCCC'
+}];
+var datas = [];
+for (var i = 0; i < plantCap.length; i++) {
+    var item = plantCap[i];
+    var itemToStyle = datalist[i];
+    datas.push({
+        name: item.value + '\n' + item.name,
+        value: itemToStyle.offset,
+        symbolSize: itemToStyle.symbolSize,
+        label: {
+            normal: {
+                textStyle: {
+                    fontSize:10
+                }
+            }
+        },
+        itemStyle: {
+            normal: {
+                color: itemToStyle.color,
+                opacity: itemToStyle.opacity
+            }
+        },
+    })
+}
+option = {
+    grid: {
+        show: false,
+        top: 0,
+        bottom: 0
+    },
+    xAxis: [{
+        gridIndex: 0,
+        type: 'value',
+        show: false,
+        min: 20,
+        max: 96,
+        nameLocation: 'middle',
+        nameGap: 5
+    }],
+    yAxis: [{
+        gridIndex: 0,
+        min: 30,
+        show: false,
+        max: 90,
+        nameLocation: 'middle',
+        nameGap: 30
+    }],
+    series: [{
+        type: 'scatter',
+        symbol: 'circle',
+        symbolSize: 120,
+        label: {
+            normal: {
+                show: true,
+                formatter: '{b}',
+                color: '#FFF',
+                textStyle: {
+                    fontSize: '20'
+                }
+            },
+        },
+        itemStyle: {
+            normal: {
+                color: '#00acea'
+            }
+        },
+        data: datas
+    }]
+};
+    
+                        // 使用刚指定的配置项和数据显示图表。
+                        myChart.setOption(option);
+                        
+                    </script>
+                    <center>
+                        <div>
+                                <img class="img-responsive" src="img\rank.jpg" alt="">
+                                <p></p><br>
+                        </div>
+                </center>
                 </div>
                 </div>
                
@@ -176,10 +462,10 @@
        
         <center>
 <div>
-<p><b>城市年拥堵成本排行</b></p> 
+<p style="text-indent:0em;font-size: 20px;color:black">城市年拥堵成本排行</p> 
 </div>
                 <div>
-                    <div id="main" style="width: 800px;height:500px; "></div>
+                    <div id="main" style="width: 800px;height:450px; "></div>
                 
                 <script type="text/javascript">
                         // 基于准备好的dom，初始化echarts实例
@@ -506,6 +792,10 @@
                             <p align="left">2017年，我国每千人汽车保有量为140辆，与欧美等发达国家的每千人500辆相比还有较大发展空间。据中国产业信息网发布的汽车产业预测，到2025年，中国汽车保有量将达到3.6亿辆，未来中国峰值千人保有量预计在400辆左右，对应峰值6亿辆汽车保有量。届时，我国交通运行压力还将进一步加大。</p><br>
                             <center>
                                 <div class='tableauPlaceholder' id='viz1546156536693' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;55&#47;5555_3&#47;1_1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='5555_3&#47;1_1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;55&#47;5555_3&#47;1_1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1546156536693');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='1024px';vizElement.style.height='335px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+                                <div>
+                                    <img class="img-responsive" src="img\car.jpg" alt="">
+                                    <p></p><br>
+                            </div>
                                 <p>数据来源： <a href="http://www.chyxx.com/industry/201801/602162.html">《2018-2024年中国专用汽车产业竞争态势及发展前景预测报告》</a>公安部交通管理局等公开资料整理</p><br>
                             </center>
                             <p align="left">车辆总量在增多，基础设施建设却很难以同样的步伐跟上来。<b>以北京为例，过去十年，即便是在摇号上牌政策的限制下，北京的汽车保有量依旧增长了41.73%，同期北京道路总长仅增长了2.8%，道路面积仅增长12.7%。 </b>车多了，路却只有这么多，遭遇堵车自然就成了民众的家常便饭，到了最后，交管部门则只能采取尾号限行的办法来保障道路的基本畅通。</p><br>
@@ -531,7 +821,7 @@
                              <p style="text-indent:0em"> <a href="http://www.199it.com/archives/737479.html">《极光大数据：2018年中国城市通勤研究报告》</a> </p><br>
                              <p style="text-indent:0em"> <a href="http://www.199it.com/archives/737728.html">《2018年中国城市通勤研究报告》</a> </p><br>
                              <p style="text-indent:0em"> <a href="http://www.bjtrc.org.cn/JGJS.aspx?id=5.2&Menu=GZCG">《北京市交通发展年度报告》</a> </p><br>
-                            <p style="text-indent:0em"> <b>作者： 全凌辉  纪晓玉</b></p><br>
+                            <p style="text-indent:0em"> <b>作者： 全凌辉</b></p><br>
                             <p style="text-indent:0em"> <b>指导老师： 吴小坤</b></p><br>
     
                                  <address>
